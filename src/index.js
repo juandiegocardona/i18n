@@ -15,7 +15,7 @@ ReactDOM.render(
 	<IntlProvider 
     locale={getLocale()}
     messages={getLocale()==="es"? localeEsMessages : localeEnMessages}>
-        <JobsList/>
+        <JobsList theme={getLocale() === "es" ? "light" : "dark"}/>
 	</IntlProvider>,
     document.getElementById("root")
 );

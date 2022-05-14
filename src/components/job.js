@@ -2,6 +2,7 @@ import React from "react";
 import {FormattedDate} from 'react-intl';
 import {FormattedPlural} from 'react-intl';
 import {FormattedNumber} from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 
 const Job = (props) => {
@@ -12,7 +13,10 @@ const Job = (props) => {
       <td>{props.offer.company}</td>
       <td>
         {props.offer.salary}
-        <FormattedPlural value={props.offer.salary} one='millon' other='millones'>
+        <FormattedPlural
+         value={props.offer.salary}
+         one={<FormattedMessage id="million" />}
+         other={<FormattedMessage id="millions" />}>
           </FormattedPlural></td>
       <td>{props.offer.city}</td>
       <td>
